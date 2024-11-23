@@ -1,0 +1,11 @@
+{
+    "singleQuote": true,
+    "endOfLine": "auto",
+    "overrides": [
+      {
+        "options": {
+          "tabWidth": 4
+        }
+      }
+    ]
+  }
