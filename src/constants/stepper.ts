@@ -1,0 +1,35 @@
+export const STEP = {
+	FRAME_TYPE: 'FRAME_TYPE',
+	FRAME_FINISH: 'FRAME_FINISH',
+	WHEELS: 'WHEELS',
+	RIM_COLOR: 'RIM_COLOR',
+	CHAIN: 'CHAIN',
+} as const;
+
+export const FRAME_TYPE_OPTION = {
+	FULL_SUSPENSION: 'FULL_SUSPENSION',
+	DIAMOND: 'DIAMOND',
+	STEP_THROUGH: 'STEP_THROUGH',
+} as const;
+
+export const FRAME_FINISH_OPTION = {
+	MATTE: 'MATTE',
+	SHINY: 'SHINY',
+} as const;
+
+export const WHEELS_TYPE_OPTION = {
+	ROAD: 'ROAD',
+	MOUNTAIN: 'MOUNTAIN',
+	FAT_BIKE: 'FAT_BIKE',
+} as const;
+
+export const RIM_COLOR_TYPE_OPTION = {
+	RED: 'RED',
+	BLACK: 'BLACK',
+	BLUE: 'BLUE',
+} as const;
+
+export const CHAIN_TYPE_OPTION = {
+	SINGLE: 'SINGLE',
+	EIGHT: 'BLAEIGHTCK',
+} as const;

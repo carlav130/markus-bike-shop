@@ -1,11 +1,12 @@
 {
-    "singleQuote": true,
-    "endOfLine": "auto",
-    "overrides": [
-      {
-        "options": {
-          "tabWidth": 4
-        }
+  "singleQuote": true,
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": "src/i18n/*.json",
+      "options": {
+        "tabWidth": 4
       }
-    ]
-  }
+    }
+  ]
+}

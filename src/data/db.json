@@ -1,0 +1,93 @@
+{
+  "parts": [
+    {
+      "id": 1,
+      "name": "FRAME_TYPE",
+      "options": [
+        { "id": 101, "name": "FULL_SUSPENSION", "base_price": 130 },
+        { "id": 102, "name": "DIAMOND", "base_price": 100 },
+        { "id": 103, "name": "STEP_THROUGH", "base_price": 90 }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "FRAME_FINISH",
+      "options": [
+        { "id": 201, "name": "MATTE", "base_price": 50 },
+        { "id": 202, "name": "SHINY", "base_price": 30 }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "WHEELS",
+      "options": [
+        { "id": 301, "name": "ROAD", "base_price": 80 },
+        { "id": 302, "name": "MOUNTAIN", "base_price": 100 },
+        { "id": 303, "name": "FAT_BIKE", "base_price": 150 }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "RIM_COLOR",
+      "options": [
+        { "id": 401, "name": "RED", "base_price": 30 },
+        { "id": 402, "name": "BLACK", "base_price": 20 },
+        { "id": 403, "name": "BLUE", "base_price": 20 }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "CHAIN",
+      "options": [
+        { "id": 501, "name": "Single-speed chain", "base_price": 43 },
+        { "id": 502, "name": "8-speed chain", "base_price": 50 }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "type": "restriction",
+      "description": "Mountain wheels are only available for full-suspension frames",
+      "conditions": {
+        "WHEELS": 302,
+        "FRAME_TYPE": [101]
+      }
+    },
+    {
+      "type": "restriction",
+      "description": "Fat bike wheels are not available in red",
+      "conditions": {
+        "WHEELS": 303,
+        "RIM_COLOR": [401]
+      }
+    },
+    {
+      "type": "price_adjustment",
+      "description": "Shiny FRAME_FINISH increases the price by $30",
+      "conditions": {
+        "frameFinish": 202
+      },
+      "adjustment": {
+        "priceChange": 30
+      }
+    },
+    {
+      "type": "restriction",
+      "description": "8-speed chain is not compatible with full-suspension frames",
+      "conditions": {
+        "CHAIN": 502,
+        "FRAME_TYPE": [101]
+      }
+    },
+    {
+      "type": "price_adjustment",
+      "description": "Diamond FRAME_TYPE has a price increase of $100",
+      "conditions": {
+        "FRAME_TYPE": [102]
+      },
+      "adjustment": {
+        "priceChange": 100
+      }
+    }
+  ]
+}

@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
-    "start": "json-server --watch src/db/db.json --port 3600"
+    "start": "json-server --watch src/data/db.json --port 3600"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.1.0",
