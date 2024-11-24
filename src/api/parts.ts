@@ -14,8 +14,3 @@ export const loadAllPriceAdjustment = () => {
 	const { data } = useFetch('http://localhost:3600/rules?type=price_adjustment')
 	return data;
 };
-
-export const loadRestrictionsBy = () => {
-	const { data } = useFetch('http://localhost:3600/rules?type=restriction')
-	return data;
-};

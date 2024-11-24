@@ -2,45 +2,50 @@
   "parts": [
     {
       "id": 1,
-      "name": "FRAME_TYPE",
+      "type": "FRAME_TYPE",
+      "name": "Frame type",
       "options": [
-        { "id": 101, "name": "FULL_SUSPENSION", "base_price": 130 },
-        { "id": 102, "name": "DIAMOND", "base_price": 100 },
-        { "id": 103, "name": "STEP_THROUGH", "base_price": 90 }
+        { "id": 101, "name": "Full-suspension", "type": "FULL_SUSPENSION", "base_price": 130 },
+        { "id": 102, "name": "Diamond", "type": "DIAMOND", "base_price": 100 },
+        { "id": 103, "name": "Step-through", "type": "STEP_THROUGH", "base_price": 90 }
       ]
     },
     {
       "id": 2,
-      "name": "FRAME_FINISH",
+      "type": "FRAME_FINISH",
+      "name": "Frame finish",
       "options": [
-        { "id": 201, "name": "MATTE", "base_price": 50 },
-        { "id": 202, "name": "SHINY", "base_price": 30 }
+        { "id": 201, "name": "Matte", "type": "MATTE", "base_price": 50 },
+        { "id": 202, "name": "Shiny", "type": "SHINY", "base_price": 30 }
       ]
     },
     {
       "id": 3,
-      "name": "WHEELS",
+      "type": "WHEELS",
+      "name": "Wheels",
       "options": [
-        { "id": 301, "name": "ROAD", "base_price": 80 },
-        { "id": 302, "name": "MOUNTAIN", "base_price": 100 },
-        { "id": 303, "name": "FAT_BIKE", "base_price": 150 }
+        { "id": 301, "name": "Road wheels", "type": "ROAD", "base_price": 80 },
+        { "id": 302, "name": "Mountain wheels", "type": "MOUNTAIN", "base_price": 100 },
+        { "id": 303, "name": "Fat bike wheels", "type": "FAT_BIKE", "base_price": 150 }
       ]
     },
     {
       "id": 4,
-      "name": "RIM_COLOR",
+      "type": "RIM_COLOR",
+      "name": "Rim color",
       "options": [
-        { "id": 401, "name": "RED", "base_price": 30 },
-        { "id": 402, "name": "BLACK", "base_price": 20 },
-        { "id": 403, "name": "BLUE", "base_price": 20 }
+        { "id": 401, "name": "Red", "type": "RED", "base_price": 30 },
+        { "id": 402, "name": "Black", "type": "BLACK", "base_price": 20 },
+        { "id": 403, "name": "Blue",  "type": "BLUE", "base_price": 20 }
       ]
     },
     {
       "id": 5,
-      "name": "CHAIN",
+      "type": "CHAIN",
+      "name": "Chain",
       "options": [
-        { "id": 501, "name": "Single-speed chain", "base_price": 43 },
-        { "id": 502, "name": "8-speed chain", "base_price": 50 }
+        { "id": 501, "name": "Single-speed chain", "type": "SINGLE", "base_price": 43 },
+        { "id": 502, "name": "8-speed chain","type": "EIGHT_SPEED",  "base_price": 50 }
       ]
     }
   ],
