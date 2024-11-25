@@ -8,7 +8,6 @@ export const Header = () => (
 			/>
       <a className="flex items-center font-semibold text-neutral" href="#product">Product</a>
       <a className="flex items-center font-semibold text-neutral" href="#clients">Clients</a>
-      <a className="flex items-center font-semibold text-neutral" href="#about">About us</a>
       <a className="flex items-center font-semibold text-neutral" href="#contact">Contact</a>
     </nav>
   </header>

@@ -50,14 +50,20 @@
     }
   ],
   "restrictions": {
-    "WHEELS": {
-      "MOUNTAIN": {
-        "FRAME_TYPE": ["FULL_SUSPENSION"]
+    "WHEELS": [
+      {
+        "condition": "MOUNTAIN",
+        "typeAllowedOptions": ["FRAME_TYPE"],
+        "allowedOptions": ["FULL_SUSPENSION"],
+        "message": "Mountain wheels require a full suspension frame"
       },
-      "FAT_BIKE": {
-        "RIM_COLOR": ["BLACK", "BLUE"]
+      {
+        "condition": "FAT_BIKE",
+        "typeAllowedOptions": ["RIM_COLOR"],
+        "allowedOptions": ["BLACK", "BLUE"],
+        "message": "FatBike wheels can only have black or blue in rim colors"
       }
-    }
+    ]
   },
   "rules": [
     {

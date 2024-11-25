@@ -1,7 +1,7 @@
 import { useEffect, useId, useState } from "react";
 import type { StepForm } from "../../../types/stepper";
 import { getPriceByProduct } from "../../../utils/prices";
-import { loadBikeParts } from "../../../api/partBikes";
+import { loadBikeParts } from "../../../api/api";
 
 interface BikeFormProps {
   stepper: StepForm[];

@@ -1,4 +1,3 @@
-import { About } from "./components/About/About"
 import { BikeConfigurator } from "./components/BikeConfigurator/BikeConfigurator"
 import { Clients } from "./components/Clients/Clients"
 import { Footer } from "./components/Common/Footer/Footer"
@@ -10,7 +9,6 @@ function App() {
       <Header />
       <BikeConfigurator />
       <Clients />
-      <About />
       <Footer />
     </>
   )

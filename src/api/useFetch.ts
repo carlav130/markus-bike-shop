@@ -1,26 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-interface UseFetchResult {
-	data: unknown;
+interface UseFetchResult<T> {
+  data: T | null;
 }
 
-const useFetch = (url: string): UseFetchResult => {
-	const [data, setData] = useState<unknown | null>(null);
+function useFetch<T>(url: string): UseFetchResult<T> {
+  const [data, setData] = useState<T | null>(null);
 
-	useEffect(() => {
-		fetch(url)
-			.then(res => {
-					if (!res.ok) {
-							throw Error('Error fetching users data');
-					}
-					return res.json();
-			})
-			.then(data => {
-					setData(data);
-			})
-	}, [url]);
+	const fetchData = async () => {
+		const response = await fetch(url);
+		if (!response.ok) {
+			throw new Error('Error fetching data');
+		}
+		const result = await response.json();
+		setData(result);
+	};
 
-	return { data };
+	fetchData();
+
+  return { data };
 }
 
 export default useFetch;

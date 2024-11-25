@@ -1,4 +1,5 @@
 import type { PartBike } from "../types/bikeParts";
+import type { Restrictions } from "../types/restrictions";
 import useFetch from "./useFetch";
 
 export const loadBikeParts = (): PartBike[] => {
@@ -6,11 +7,11 @@ export const loadBikeParts = (): PartBike[] => {
 	return data as PartBike[];
 };
 
-export const loadAllRestrictions = () => {
-	const { data } = useFetch('http://localhost:3600/rules?type=restriction')
-	return data;
-};
-
+export const loadRestrictions = (): Restrictions => {
+  const { data } = useFetch('http://localhost:3600/restrictions?type=restriction');
+	return data as Restrictions;
+}
+  
 export const loadAllPriceAdjustment = () => {
 	const { data } = useFetch('http://localhost:3600/rules?type=price_adjustment')
 	return data;
