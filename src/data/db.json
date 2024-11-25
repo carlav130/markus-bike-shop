@@ -67,24 +67,14 @@
   },
   "rules": [
     {
-      "type": "price_adjustment",
-      "description": "Shiny FRAME_FINISH increases the price by $30",
+      "description": "Shiny Frame finish on Full suspension increases the price by $30",
       "conditions": {
-        "frameFinish": 202
+        "typeRestricted": "FRAME_TYPE",
+        "optionRestricted": "FULL_SUSPENSION",
+        "typeSelected": "FRAME_FINISH",
+        "optionSelected": "SHINY"
       },
-      "adjustment": {
-        "priceChange": 30
-      }
-    },
-    {
-      "type": "price_adjustment",
-      "description": "Diamond FRAME_TYPE has a price increase of $100",
-      "conditions": {
-        "FRAME_TYPE": [102]
-      },
-      "adjustment": {
-        "priceChange": 100
-      }
+      "adjustment": 30
     }
   ]
 }

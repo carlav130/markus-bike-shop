@@ -1,7 +1,7 @@
 import { useEffect, useId, useState } from "react";
 import type { StepForm } from "../../../types/stepper";
 import { getPriceByProduct } from "../../../utils/prices";
-import { loadBikeParts } from "../../../api/api";
+import { loadAllPriceAdjustment, loadBikeParts } from "../../../api/api";
 
 interface BikeFormProps {
   stepper: StepForm[];
@@ -9,18 +9,19 @@ interface BikeFormProps {
 
 export const PriceCalculator = ({ stepper }: BikeFormProps) => {
   const products = loadBikeParts();
+  const adjustments = loadAllPriceAdjustment();
   const [totalPrice, updateTotalPrice] = useState(0);
 
   useEffect(() => {
     for (const step of stepper) {
-      step.price = step.value ? getPriceByProduct(products, step) : 0;
+      step.price = step.value ? getPriceByProduct(products, step, stepper, adjustments) : 0;
     }
     const newTotalPrice = stepper.reduce((a, b) => {
         return a + (b.price || 0);
     }, 0)
     updateTotalPrice(newTotalPrice);
 
-  }, [products, stepper]);
+  }, [products, adjustments, stepper]);
 
   return (
     <div className="bg-gray-200 p-14 w-96 rounded-lg flex flex-col justify-between">

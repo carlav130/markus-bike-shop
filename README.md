@@ -1,50 +1,39 @@
-# React + TypeScript + Vite
+# Marku's Bike Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Requeriments
 
-Currently, two official plugins are available:
+Setup development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `npm install` - Install all dependencies
 
-## Expanding the ESLint configuration
+# Run project
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- `npm run dev` - Start frontend
+- `npm run start` - Start 'fake' api
 
-- Configure the top-level `parserOptions` property like this:
+### It's necessary to have both started!
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Information
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+I haven't done everything I would like given the time. But, these are the decisions I have made and why:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- `Redux` - In this case, I didn't integrate Redux in the project because I think it's adding a lot of unnecessary complexity.
+- `Responsive` - In this case, I didn't have time enough to make a website responsive even it's very easy with Tailwind.
+- `Tests` - I would have add E2E to test all website with Playwright.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## More phases
+
+As an MVP, in the next phases I would do:
+
+- PHASE I - Make more scalable the system of rules and adjustement prices.
+- PHASE II - Add another component where you can see how is the bike with the selections as other websites.
+- PHASE III - Create a suggestion system: if user is going to use the bike on mountain, advise the user not to choose road wheels...
+- PHASE IV - Analytics / Testing / Documentation
+
+## Technologies
+
+- `JSON Server` - It simulates a fake server and we can make simulate api calls.
+- `Flowbite` - Library of components.
+- `TailwindCSS` - Framework for styling. I saw in your page that you use it, so even I don't have so much experience, I have try it!
+- `React/Typescript`
+- `Excalidraw` - https://excalidraw.com/#room=6c640ac0129d60322061,F83AKpvHxEVHTuOMy50Q9w - Research & ideas that I made

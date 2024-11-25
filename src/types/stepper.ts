@@ -16,10 +16,15 @@ export interface StepForm {
 	price?: number;
 }   
 
+export interface Price {
+	originalPrice: number;
+	price: number;
+}   // TODO
+
 export interface StepState {
 	[STEP.FRAME_TYPE]: StepValue | null;
 	[STEP.FRAME_FINISH]: StepValue | null;
 	[STEP.WHEELS]: StepValue | null;
 	[STEP.RIM_COLOR]: StepValue | null;
 	[STEP.CHAIN]: StepValue | null;
-  }
+}

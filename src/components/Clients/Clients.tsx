@@ -14,7 +14,7 @@ export const Clients = () => {
             <div className="p-12">
               <blockquote className="p-4 w-96 my-4 border-s-4 border-gray-300 bg-gray-50">
                   <p className="text-xl italic font-medium leading-relaxed text-gray-900">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a feugiat justo. Aenean quis eros a massa iaculis porta. Nunc nec mollis sapien.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a feugiat justo. Aenean quis eros a massa <span className="text-co-main">Factorial</span> iaculis porta. Nunc nec mollis sapien.
                   Praesent tristique metus at ante semper placerat.
                   </p>
               </blockquote>

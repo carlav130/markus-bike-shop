@@ -9,8 +9,16 @@ interface StepperProps {
   updateStepper: (step: StepForm) => void;
 }
 
+const STEPS = [
+  { type: STEP.FRAME_TYPE, title: "Frame type", options: frameTypesOptions },
+  { type: STEP.FRAME_FINISH, title: "Frame finish", options: frameFinishOptions },
+  { type: STEP.WHEELS, title: "Wheels", options: wheelsOptions },
+  { type: STEP.RIM_COLOR, title: "Rim color", options: rimColorOptions },
+  { type: STEP.CHAIN, title: "Chain", options: chainOptions },
+];
+
 export const Stepper = ({ updateStepper }: StepperProps) => {
-  const [state, setState] = useState({
+  const [steps, setSteps] = useState({
     [STEP.FRAME_TYPE]: null,
     [STEP.FRAME_FINISH]: null,
     [STEP.WHEELS]: null,
@@ -21,17 +29,9 @@ export const Stepper = ({ updateStepper }: StepperProps) => {
   const restrictions = loadRestrictions();
 
   const updateStep = (stepType: Step, value: StepValue) => {
-    setState((prevState) => ({ ...prevState, [stepType]: value }))
+    setSteps((prevState) => ({ ...prevState, [stepType]: value }))
     updateStepper({ stepType, value })
   }
-
-  const steps = [
-    { type: STEP.FRAME_TYPE, title: "Frame type", options: frameTypesOptions },
-    { type: STEP.FRAME_FINISH, title: "Frame finish", options: frameFinishOptions },
-    { type: STEP.WHEELS, title: "Wheels", options: wheelsOptions },
-    { type: STEP.RIM_COLOR, title: "Rim color", options: rimColorOptions },
-    { type: STEP.CHAIN, title: "Chain", options: chainOptions },
-  ];
 
   const isOptionDisabled = (step: Step, option: StepValue): boolean => { 
     if (!restrictions || !Object.keys(restrictions) ||  Object.keys(restrictions) && !Object.keys(restrictions).includes(step)) return false;
@@ -43,9 +43,8 @@ export const Stepper = ({ updateStepper }: StepperProps) => {
     let isOptionDisabled = false;
 
     for (const restriction of stepRestrictions) {
-      if (restriction.condition === option && state[restriction.typeAllowedOptions] && !restriction.allowedOptions.includes(state[restriction.typeAllowedOptions])) {
+      if (restriction.condition === option && steps[restriction.typeAllowedOptions] && !restriction.allowedOptions.includes(steps[restriction.typeAllowedOptions])) {
         isOptionDisabled = true;
-        // Reset si está seleccionado
       }
     }
 
@@ -54,25 +53,23 @@ export const Stepper = ({ updateStepper }: StepperProps) => {
 
   return (
     <ol className="space-y-4">
-      {steps.map((step, index) => (
+      {STEPS.map((step, index) => (
         <li key={step.type}>
           <StepHeader
             step={index + 1}
             title={step.title}
-            isCompleted={state[step.type] !== null}
+            isCompleted={steps[step.type] !== null}
           />
           <div className="flex flex-wrap gap-2 mt-4">
-            {step.options.map((option) => {
-              return (
-                <OptionButton
-                  key={option}
-                  option={option}
-                  isSelected={state[step.type] === option}
-                  isDisabled={isOptionDisabled(step.type, option)}
-                  onClick={() => updateStep(step.type, option)}
-                />
-              );
-            })}
+            {step.options.map((option) => (
+              <OptionButton
+                key={option}
+                option={option}
+                isSelected={steps[step.type] === option}
+                isDisabled={isOptionDisabled(step.type, option)}
+                onClick={() => updateStep(step.type, option)}
+              />
+            ))}
           </div>
         </li>
       ))}
