@@ -8,7 +8,7 @@ export const Footer = () => {
       >
         <span className="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
           >© {currentYear}
-          <a href="https://carlamartinez.dev/" className="hover:underline">Marku's Bike Shop</a>.
+          <a href="https://factorialhr.es/" className="hover:underline"> Marku's Bike Shop</a>.
         </span>
         <ul
           className="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"

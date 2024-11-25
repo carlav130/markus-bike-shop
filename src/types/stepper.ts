@@ -13,4 +13,5 @@ export type StepValue = FrameTypeOptions | FrameFinishOptions | WheelsTypeOption
 export interface StepForm {
 	stepType: Step;
 	value: StepValue;
+	price?: number;
 }   

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { loadAllRestrictions } from "../../../api/parts";
-import { STEP, chainOptions, frameFinishOptions, frameTypesOptions, rimColorOptions, wheelsOptions } from "../../../constants/stepper";
+import { loadAllRestrictions } from "../../../api/partBikes";
+import { FRAME_TYPE_OPTION, STEP, chainOptions, frameFinishOptions, frameTypesOptions, rimColorOptions, wheelsOptions } from "../../../constants/stepper";
 import type { ChainTypeOptions, FrameFinishOptions, FrameTypeOptions, RimColorTypeOptions, StepForm, WheelsTypeOptions } from "../../../types/stepper";
 
 interface StepperProps {
@@ -8,7 +8,7 @@ interface StepperProps {
 }
 
 export const Stepper = ({ updateStepper }: StepperProps) => {
-  const allRestrictions = loadAllRestrictions();
+  // const allRestrictions = loadAllRestrictions();
 
   const [currentFrameType, setFrameType] = useState<FrameTypeOptions| null>(null);
   const [currentFrameFinish, setFrameFinish] = useState<FrameFinishOptions| null>(null);
@@ -52,7 +52,7 @@ export const Stepper = ({ updateStepper }: StepperProps) => {
           <div className="flex items-center justify-between">
             <h3 className="font-medium">1. Frame type</h3>
             {currentFrameType && <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5.917 5.724 10.5 15 1.5"/>
             </svg>}
           </div>
         </div>
@@ -70,7 +70,7 @@ export const Stepper = ({ updateStepper }: StepperProps) => {
       </li>
 
       {/* FRAME FINISH */}
-      {currentFrameType && <li>
+      <li>
         <div className={`
           ${currentFrameFinish ? 'text-green-700 border-green-300 bg-green-50' : ''}
           w-72 p-3 text-gray-900 bg-gray-100 border border-gray-300 rounded-lg`
@@ -78,7 +78,7 @@ export const Stepper = ({ updateStepper }: StepperProps) => {
           <div className="flex items-center justify-between">
             <h3 className="font-medium">2. Frame finish</h3>
             {currentFrameFinish && <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5.917 5.724 10.5 15 1.5"/>
             </svg>}
           </div>
         </div>
@@ -93,10 +93,10 @@ export const Stepper = ({ updateStepper }: StepperProps) => {
             </button>  
           ))}
         </div>
-      </li>}
+      </li>
 
       {/* WHEELS */}
-      {currentFrameFinish && <li>
+      <li>
         <div className={`
           ${currentWheel ? 'text-green-700 border-green-300 bg-green-50' : ''}
           w-72 p-3 text-gray-900 bg-gray-100 border border-gray-300 rounded-lg`
@@ -104,7 +104,7 @@ export const Stepper = ({ updateStepper }: StepperProps) => {
           <div className="flex items-center justify-between">
             <h3 className="font-medium">3. Wheels</h3>
             {currentWheel && <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5.917 5.724 10.5 15 1.5"/>
             </svg>}
           </div>
         </div>
@@ -119,10 +119,10 @@ export const Stepper = ({ updateStepper }: StepperProps) => {
             </button>  
           ))}
         </div>
-      </li>}
+      </li>
 
       {/* RIM COLOR */}
-      {currentWheel && <li>
+      <li>
         <div className={`
           ${currentRimColor ? 'text-green-700 border-green-300 bg-green-50' : ''}
           w-72 p-3 text-gray-900 bg-gray-100 border border-gray-300 rounded-lg`
@@ -130,7 +130,7 @@ export const Stepper = ({ updateStepper }: StepperProps) => {
           <div className="flex items-center justify-between">
             <h3 className="font-medium">4. Rim color</h3>
             {currentRimColor && <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5.917 5.724 10.5 15 1.5"/>
             </svg>}
           </div>
         </div>
@@ -145,10 +145,10 @@ export const Stepper = ({ updateStepper }: StepperProps) => {
             </button>  
           ))}
         </div>
-      </li>}
+      </li>
 
       {/* CHAIN */}
-      {currentRimColor && <li>
+      <li>
         <div className={`
           ${currentChain ? 'text-green-700 border-green-300 bg-green-50' : ''}
           w-72 p-3 text-gray-900 bg-gray-100 border border-gray-300 rounded-lg`
@@ -156,7 +156,7 @@ export const Stepper = ({ updateStepper }: StepperProps) => {
           <div className="flex items-center justify-between">
             <h3 className="font-medium">5. Chain</h3>
               {currentChain && <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5.917 5.724 10.5 15 1.5"/>
             </svg>}
           </div>
         </div>
@@ -172,7 +172,7 @@ export const Stepper = ({ updateStepper }: StepperProps) => {
             </button>  
           ))}
         </div>
-      </li>}
+      </li>
     </ol>
   );
 };

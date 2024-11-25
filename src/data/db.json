@@ -1,5 +1,5 @@
 {
-  "parts": [
+  "bikeParts": [
     {
       "id": 1,
       "type": "FRAME_TYPE",
@@ -49,23 +49,17 @@
       ]
     }
   ],
+  "restrictions": {
+    "WHEELS": {
+      "MOUNTAIN": {
+        "FRAME_TYPE": ["FULL_SUSPENSION"]
+      },
+      "FAT_BIKE": {
+        "RIM_COLOR": ["BLACK", "BLUE"]
+      }
+    }
+  },
   "rules": [
-    {
-      "type": "restriction",
-      "description": "Mountain wheels are only available for full-suspension frames",
-      "conditions": {
-        "WHEELS": 302,
-        "FRAME_TYPE": [101]
-      }
-    },
-    {
-      "type": "restriction",
-      "description": "Fat bike wheels are not available in red",
-      "conditions": {
-        "WHEELS": 303,
-        "RIM_COLOR": [401]
-      }
-    },
     {
       "type": "price_adjustment",
       "description": "Shiny FRAME_FINISH increases the price by $30",
@@ -74,14 +68,6 @@
       },
       "adjustment": {
         "priceChange": 30
-      }
-    },
-    {
-      "type": "restriction",
-      "description": "8-speed chain is not compatible with full-suspension frames",
-      "conditions": {
-        "CHAIN": 502,
-        "FRAME_TYPE": [101]
       }
     },
     {

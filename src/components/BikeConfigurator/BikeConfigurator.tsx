@@ -40,7 +40,7 @@ export const BikeConfigurator = () => {
   }
 
   return (
-    <div id="product" className="flex flex-row justify-between mt-14">
+    <div id="product" className="flex flex-row justify-center gap-20 mt-14 mb-14">
       <BikeForm updateStepper={handleUpdateStepper} />
       <PriceCalculator stepper={stepper} />
     </div>
