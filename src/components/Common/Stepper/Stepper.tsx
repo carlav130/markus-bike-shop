@@ -4,6 +4,7 @@ import type { Step, StepForm, StepValue } from "../../../types/stepper";
 import { StepHeader } from "./StepHeader/StepHeader";
 import { OptionButton } from "./OptionButton/OptionButton";
 import { loadRestrictions } from "../../../api/api";
+import type { Restriction } from "../../../types/restrictions";
 
 interface StepperProps {
   updateStepper: (step: StepForm) => void;
@@ -34,21 +35,13 @@ export const Stepper = ({ updateStepper }: StepperProps) => {
   }
 
   const isOptionDisabled = (step: Step, option: StepValue): boolean => { 
-    if (!restrictions || !Object.keys(restrictions) ||  Object.keys(restrictions) && !Object.keys(restrictions).includes(step)) return false;
-  
-    const stepRestrictions = restrictions[step as Step];
+     if (!restrictions || !restrictions[step]) return false;
 
-    if (!stepRestrictions) return false;
-
-    let isOptionDisabled = false;
-
-    for (const restriction of stepRestrictions) {
-      if (restriction.condition === option && steps[restriction.typeAllowedOptions] && !restriction.allowedOptions.includes(steps[restriction.typeAllowedOptions])) {
-        isOptionDisabled = true;
-      }
-    }
-
-    return isOptionDisabled;
+      return restrictions[step].some((restriction: Restriction) =>
+        restriction.condition === option &&
+        steps[restriction.typeAllowedOptions] &&
+        !restriction.allowedOptions.includes(steps[restriction.typeAllowedOptions])
+      );
   }  
 
   return (

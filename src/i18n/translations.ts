@@ -1,0 +1,20 @@
+export const translations = {
+  "FRAME_TYPE": "Frame type",
+  "FULL_SUSPENSION": "Full-suspension",
+  "DIAMOND": "Diamond",
+  "STEP_THROUGH": "Step-through",
+  "FRAME_FINISH": "Frame finish",
+  "MATTE": "Matte",
+  "SHINY": "Shiny",
+  "WHEELS": "Wheels",
+  "ROAD": "Road wheels",
+  "MOUNTAIN": "Mountain wheels",
+  "FAT_BIKE": "Fat bike wheels",
+  "RIM_COLOR": "Rim color",
+  "RED": "Red",
+  "BLACK": "Black",
+  "BLUE": "Blue",
+  "CHAIN": "Chain",
+  "SINGLE": "Single-speed chain",
+  "EIGHT_SPEED":  "8-speed chain"
+}

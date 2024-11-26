@@ -72,7 +72,7 @@
         "typeRestricted": "FRAME_TYPE",
         "optionRestricted": "FULL_SUSPENSION",
         "typeSelected": "FRAME_FINISH",
-        "optionSelected": "SHINY"
+        "optionSelected": "MATTE"
       },
       "adjustment": 30
     }

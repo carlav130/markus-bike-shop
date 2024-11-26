@@ -13,13 +13,13 @@ export type StepValue = FrameTypeOptions | FrameFinishOptions | WheelsTypeOption
 export interface StepForm {
 	stepType: Step;
 	value: StepValue;
-	price?: number;
+	price?: Price;
 }   
 
 export interface Price {
 	originalPrice: number;
 	price: number;
-}   // TODO
+}  
 
 export interface StepState {
 	[STEP.FRAME_TYPE]: StepValue | null;

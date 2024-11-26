@@ -1,19 +1,26 @@
 import type { Adjustment } from "../types/adjustments";
 import type { PartBike } from "../types/bikeParts";
-import type { StepForm } from "../types/stepper";
+import type { Price, StepForm } from "../types/stepper";
 
-export const getPriceByProduct = (products: PartBike[], step: StepForm, stepper: StepForm[], adjustments: Adjustment[]): number => {
-	if (!products) return 0;
+export const getPriceByProduct = (products: PartBike[], step: StepForm, stepper: StepForm[], adjustments: Adjustment[]): Price => {
+	const resetPrice = {
+		originalPrice: 0,
+		price: 0
+	};
+	if (!products) return resetPrice;
 
 	const partBike = products.find(product => product.type === step.stepType);
 
-	if (!partBike) return 0;
+	if (!partBike) return resetPrice;
 	
 	const option = partBike?.options.find(option => option.type === step.value);
 
-	if (!option) return 0;
+	if (!option) return resetPrice;
 
-	let price = option.base_price;
+	const price = {
+		originalPrice: option.base_price,
+		price: option.base_price
+	};
 
 	// We have to check if this product has any adjustment on the price.
 	for (const adjustment of adjustments) {
@@ -24,7 +31,7 @@ export const getPriceByProduct = (products: PartBike[], step: StepForm, stepper:
 			adjustment.conditions.optionSelected === step.value && 
 			isTypeRestricted
 		) {
-			price += adjustment.adjustment;
+			price.price += adjustment.adjustment;
 		}
 	}
 
