@@ -5,6 +5,7 @@
 Setup development
 
 - `npm install` - Install all dependencies
+- `v.22.8.0` - Version node
 
 # Run project
 
@@ -25,7 +26,7 @@ I haven't done everything I would like given the time. But, these are the decisi
 
 As an MVP, in the next phases I would do:
 
-- PHASE I - System of rules and adjustement prices more scalable. Exhaustive tests and resolve corner cases.
+- PHASE I - System of rules and adjustement prices more scalable. Exhaustive tests and resolve corner cases. Form and steps sequential.
 - PHASE II - Add another component where you can see how is the bike with the selections as other websites.
 - PHASE III - Create a suggestion system: if user is going to use the bike on mountain, advise the user not to choose road wheels...
 - PHASE IV - Analytics / Testing / Documentation

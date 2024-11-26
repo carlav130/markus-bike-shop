@@ -2,7 +2,7 @@ export const Clients = () => {
   return (
     <div  id="clients" className="bg-gray-100 p-32">      
       <div className="flex flex-col">
-        <h1 className="text-4xl text-center font-semibold">More than 11,000 clients have trusted in Mike's Bike Shop</h1>
+        <h1 className="text-4xl text-center font-semibold text-gray-700">More than <span className="text-gray-600">11,000</span> clients have trusted in Mike's Bike Shop</h1>
 
         <div className="flex flex-row justify-center mt-14">
           <div className="flex flex-row bg-white rounded-xl shadow-lg">

@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer>
       <div
-        className="rounded-lg mx-auto flex items-center justify-between p-14"
+        className="rounded-lg mx-auto flex items-center justify-between p-14 text-gray-700"
       >
         <span className="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
           >© {currentYear}
