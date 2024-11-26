@@ -12,13 +12,9 @@ export const OptionButton = ({ option, isSelected, isDisabled, onClick }: { opti
         text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none
       `}
       aria-describedby={isDisabled ? 'tooltip-default' : undefined}
+      title={isDisabled ? 'Option not available with your selection' : undefined}
     >
       {t(option)}
     </button>
-
-    <div id="tooltip-default" role="tooltip" className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 toolti">
-      Tooltip content
-      <div className="tooltip-arrow" data-popper-arrow />
-    </div>
   </div>
 )
